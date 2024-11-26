@@ -7,15 +7,75 @@
 		<meta http-equiv="refresh" content="10">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
+		<style>
+			body, html {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
+			.container {
+				display: grid; 
+				grid-template-columns: 1.1fr 1.1fr 1.1fr 0.8fr; 
+				grid-template-rows: 0.5fr 1fr 1fr 1fr 0.3fr; 
+				gap: 10px; 
+				grid-template-areas: 
+					"Title Title Title Title"
+					"MainPane MainPane MainPane Sidebar"
+					"MainPane MainPane MainPane Sidebar"
+					"MainPane MainPane MainPane Sidebar"
+					"Footer Footer Footer Footer"; 
+				height: 100vh;
+				padding: 10px;
+			}
+
+			.Title {
+				grid-area: Title;
+				background-color: #f4f4f4;
+				padding: 10px;
+			}
+
+			.Footer {
+				grid-area: Footer;
+				background-color: #e4e4e4;
+				padding: 10px;
+			}
+
+			.MainPane {
+				grid-area: MainPane;
+				background-color: #ffffff;
+				padding: 10px;
+				overflow: auto;
+			}
+
+			.Sidebar {
+				grid-area: Sidebar;
+				background-color: #ddd;
+				padding: 10px;
+				overflow: auto;
+			}
+
+			h1, h2 {
+				margin: 0;
+			}
+		</style>
 	</head>
-
-<h1>
-	Elliot's Section
-</h1>
-<h2>Black holes</h2>
-<p>
-	The scientific and theoretical explanation and possibilities of the existance of black holes.
-</p>
-
-<body></body>
+	<body>
+		<div class="container">
+			<div class="Title">
+				<h1>Elliot's Section</h1>
+				<h2>Some Topic</h2>
+				<p>I don't really know what I'm going to talk about.</p>
+			</div>
+			<div class="Footer">
+				<p>I'm really not sure what you're looking for here, there's nothing to see</p>
+			</div>
+			<div class="MainPane">
+				<p>I really need to think of a topic to include. I could honestly just ramble for like a page or two, mess with some js scripting for the heck of it, maybe add a real-time clock would be cool <br> I could of course just think of a proper topic to write about and make a little wiki page style thing but frankly I don't want to put a massive amount of research into it if I don't have to, you know?</p>
+			</div>
+			<div class="Sidebar">
+				<p>The sidebar is now in the right place, and will either contain some fun widget-y things, or links to the other pages... What if I made this page look like some mid-2000s thing with like the windows XP background, low fps animations on the page and a ton of widget style bits on the side?</p>
+			</div>
+		</div>
+	</body>
+</html>
