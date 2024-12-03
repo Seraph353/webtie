@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us"> 
+<html lang="en-us">
 	<head>
 		<link rel="stylesheet" href="assets/styles.css">
 		<title>Your title goes here</title>
@@ -58,23 +58,60 @@
 			h1, h2 {
 				margin: 0;
 			}
+
+			body {
+				padding: 25px;
+				background-color: white;
+				color: black;
+			}
+
+			.dark-mode {
+				background-color: black;
+				color: white;
+			}
+
+			.dark-mode .Title {
+				background-color: #333;
+			}
+
+			.dark-mode .Footer {
+				background-color: #444;
+			}
+
+			.dark-mode .MainPane {
+				background-color: #222;
+			}
+
+			.dark-mode .Sidebar {
+				background-color: #555;
+			}
 		</style>
+		<script>
+			function backgroundshift() {
+				var element = document.body;
+				element.classList.toggle("dark-mode");
+			}
+		</script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="Title">
 				<h1>Elliot's Section</h1>
-				<h2>Some Topic</h2>
-				<p>I don't really know what I'm going to talk about.</p>
+				<h2>Things about me</h2>
+				<p>Because I can't think of anything else to add</p>
 			</div>
 			<div class="Footer">
-				<p>I'm really not sure what you're looking for here, there's nothing to see</p>
+				<p></p>
+				<button onclick="backgroundshift()">Press me.</button>
 			</div>
 			<div class="MainPane">
-				<p>I really need to think of a topic to include. I could honestly just ramble for like a page or two, mess with some js scripting for the heck of it, maybe add a real-time clock would be cool <br> I could of course just think of a proper topic to write about and make a little wiki page style thing but frankly I don't want to put a massive amount of research into it if I don't have to, you know?</p>
+				<p>What is there about me to talk about?</p>
+				<br>
+				<h3>Computers</h3>
+				<p>I have been interested in computers since I was a child, either trying to find ways to make them work, or breaking them. There was a pair of old laptops in primary school, which I took great joy in messing with. My interest in operating systems has stayed with me.</p>
 			</div>
 			<div class="Sidebar">
-				<p>The sidebar is now in the right place, and will either contain some fun widget-y things, or links to the other pages... What if I made this page look like some mid-2000s thing with like the windows XP background, low fps animations on the page and a ton of widget style bits on the side?</p>
+				<p></p>
 			</div>
 		</div>
 	</body>
