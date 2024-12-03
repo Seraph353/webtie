@@ -64,6 +64,8 @@
 				background-color: white;
 				color: black;
 			}
+			.button1 {background-color: #222; color: white}
+			.dark-mode .button1 {background-color: #ffffff; color: black}
 
 			.dark-mode {
 				background-color: black;
@@ -85,11 +87,31 @@
 			.dark-mode .Sidebar {
 				background-color: #555;
 			}
+			.easteregg {
+				background-image: url("assets/veryimportantasset.png"); background-color: aqua; background-size:cover;
+			}
+			.easteregg .Title {
+				background-color: transparent;
+			}
+			.easteregg .Footer{
+				background-color: transparent;
+			}
+			.easteregg .MainPane{
+				background-color: transparent;
+			}
+			.easteregg .Sidebar{
+				background-color: transparent;
+			}
+			
 		</style>
 		<script>
 			function backgroundshift() {
 				var element = document.body;
 				element.classList.toggle("dark-mode");
+			}
+			function easteregg() {
+				var element = document.body;
+				element.classList.toggle("easteregg")
 			}
 		</script>
 	</head>
@@ -102,7 +124,7 @@
 			</div>
 			<div class="Footer">
 				<p></p>
-				<button onclick="backgroundshift()">Press me.</button>
+				<button id="LightToggle"class="button1" onclick="backgroundshift()">Color</button> <button class="button1" onclick="easteregg()">Don't Click</button>
 			</div>
 			<div class="MainPane">
 				<p>What is there about me to talk about?</p>
