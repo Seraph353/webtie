@@ -14,11 +14,11 @@
       align-items: center;
       background-color: #f0f0f0;
       overflow: hidden;
-      position: relative; /* Set position relative for body */
+      position: relative;
     }
 
     #moveButton {
-      position: absolute; /* Keep it absolute */
+      position: absolute;
       padding: 20px 40px;
       font-size: 16px;
       background-color: #4CAF50;
@@ -26,7 +26,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: left 0.5s ease, top 0.5s ease; /* Smooth transition for left and top */
+      transition: left 0.5s ease, top 0.5s ease;
     }
 
     #moveButton:hover {
@@ -34,35 +34,45 @@
     }
   </style>
   <script>
-    // Function to move the button to a random position with smooth transition
-    function moveButton() {
+    document.addEventListener('DOMContentLoaded', () => {
       const button = document.getElementById('moveButton');
-      const bodyWidth = document.body.clientWidth;
-      const bodyHeight = document.body.clientHeight;
+      const minimumDistance = 100; // Minimum distance the button must move
 
-      // Generate random positions
-      const randomX = Math.random() * (bodyWidth - button.offsetWidth);
-      const randomY = Math.random() * (bodyHeight - button.offsetHeight);
+      // Function to move the button to a random position with a minimum distance
+      function moveButton() {
+        const bodyWidth = document.body.clientWidth;
+        const bodyHeight = document.body.clientHeight;
 
-      // Move the button
-      button.style.left = `${randomX}px`;
-      button.style.top = `${randomY}px`;
-    }
+        let currentX = button.offsetLeft;
+        let currentY = button.offsetTop;
 
-    // Add mouseover event to the button
-    const button = document.getElementById('moveButton');
-    button.addEventListener('mouseover', moveButton);
+        let randomX, randomY, distance;
 
-    // Initial positioning to trigger the transition
-    window.addEventListener('load', () => {
-      moveButton();  // Position it randomly once on page load
+        do {
+          // Generate random positions
+          randomX = Math.random() * (bodyWidth - button.offsetWidth);
+          randomY = Math.random() * (bodyHeight - button.offsetHeight);
+
+          // Calculate the distance from the current position
+          distance = Math.sqrt(
+            Math.pow(randomX - currentX, 2) + Math.pow(randomY - currentY, 2)
+          );
+        } while (distance < minimumDistance); // Ensure the distance is greater than the minimum
+
+        // Move the button
+        button.style.left = `${randomX}px`;
+        button.style.top = `${randomY}px`;
+      }
+
+      // Add mouseover event to the button
+      button.addEventListener('mouseover', moveButton);
+
+      // Initial positioning to trigger the transition
+      moveButton(); // Position it randomly once on page load
     });
   </script>
-
 </head>
 <body>
-
   <button id="moveButton">Catch Me!</button>
-
 </body>
 </html>
