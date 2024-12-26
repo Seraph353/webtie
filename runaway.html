@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Button</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      position: relative; /* Set position relative for body */
+    }
+
+    #moveButton {
+      position: absolute; /* Keep it absolute */
+      padding: 20px 40px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: left 0.5s ease, top 0.5s ease; /* Smooth transition for left and top */
+    }
+
+    #moveButton:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    // Function to move the button to a random position with smooth transition
+    function moveButton() {
+      const button = document.getElementById('moveButton');
+      const bodyWidth = document.body.clientWidth;
+      const bodyHeight = document.body.clientHeight;
+
+      // Generate random positions
+      const randomX = Math.random() * (bodyWidth - button.offsetWidth);
+      const randomY = Math.random() * (bodyHeight - button.offsetHeight);
+
+      // Move the button
+      button.style.left = `${randomX}px`;
+      button.style.top = `${randomY}px`;
+    }
+
+    // Add mouseover event to the button
+    const button = document.getElementById('moveButton');
+    button.addEventListener('mouseover', moveButton);
+
+    // Initial positioning to trigger the transition
+    window.addEventListener('load', () => {
+      moveButton();  // Position it randomly once on page load
+    });
+  </script>
+
+</head>
+<body>
+
+  <button id="moveButton">Catch Me!</button>
+
+</body>
+</html>
