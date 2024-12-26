@@ -7,100 +7,264 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
 		<style>
-			body, html {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			.container {
-				display: grid; 
-				grid-template-columns: 1.1fr 1.1fr 1.1fr 0.8fr; 
-				grid-template-rows: 0.5fr 1fr 1fr 1fr 0.3fr; 
-				gap: 10px; 
-				grid-template-areas: 
-					"Title Title Title Title"
-					"MainPane MainPane MainPane Sidebar"
-					"MainPane MainPane MainPane Sidebar"
-					"MainPane MainPane MainPane Sidebar"
-					"Footer Footer Footer Footer"; 
-				height: 100vh;
-				padding: 10px;
-			}
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-			.Title {
-				grid-area: Title;
-				background-color: #f4f4f4;
-				padding: 10px;
-			}
+html, body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    height: 100%;
+    width: 100%;
+    background-color: #f4f4f4; /* Default light background */
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition for background and text color */
+}
 
-			.Footer {
-				grid-area: Footer;
-				background-color: #e4e4e4;
-				padding: 10px;
-			}
+/* Apply the dark background directly to the body when dark mode is on */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
 
-			.MainPane {
-				grid-area: MainPane;
-				background-color: #ffffff;
-				padding: 10px;
-				overflow: auto;
-			}
+/* Layout Container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    gap: 20px;
+    padding: 20px;
+    min-height: 100%; /* Ensure the container takes the full height */
+    background-color: #f4f4f4; /* Default background for light mode */
+    transition: background-color 0.3s ease; /* Smooth transition for container background */
+}
 
-			.Sidebar {
-				grid-area: Sidebar;
-				background-color: #ddd;
-				padding: 10px;
-				overflow: auto;
-			}
+/* Header */
+.header {
+    grid-area: header;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for header background and text */
+}
 
-			h1, h2 {
-				margin: 0;
-			}
+.header h1 {
+    font-size: 2rem;
+    color: #333;
+}
 
-			body {
-				padding: 25px;
-				background-color: white;
-				color: black;
-			}
-			.button1 {background-color: #222; color: white}
-			.dark-mode .button1 {background-color: #ffffff; color: black}
+.header h2 {
+    font-size: 1.2rem;
+    color: #555;
+}
 
-			.dark-mode {
-				background-color: black;
-				color: white;
-			}
+/* Main Content Area */
+.main {
+    grid-area: main;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for main content background and text */
+}
 
-			.dark-mode .Title {
-				background-color: #333;
-			}
+.main h3 {
+    color: #333;
+}
 
-			.dark-mode .Footer {
-				background-color: #444;
-			}
+.main p {
+    margin-bottom: 1rem;
+    color: #666;
+}
 
-			.dark-mode .MainPane {
-				background-color: #222;
-			}
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for sidebar background and text */
+}
 
-			.dark-mode .Sidebar {
-				background-color: #555;
-			}
-			.easteregg {
-				background-image: url("assets/veryimportantasset.png"); background-color: aqua; background-size:cover; font-family: "Comic Sans MS", "Comic Sans", cursive; 
-			}
-			.easteregg .Title {
-				background-color: transparent;
-			}
-			.easteregg .Footer{
-				background-color: transparent;
-			}
-			.easteregg .MainPane{
-				background-color: transparent;
-			}
-			.easteregg .Sidebar{
-				background-color: transparent;
-			}
-			
+.sidebar p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for footer background and text */
+}
+
+.footer button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for button background */
+}
+
+.footer button:hover {
+    background-color: #555;
+}
+
+/* Dark Mode */
+.dark-mode .container {
+    background-color: #333; /* Ensure the container background turns dark */
+}
+
+.dark-mode .header,
+.dark-mode .footer {
+    background-color: #444; /* Dark background for header and footer */
+}
+
+.dark-mode .main {
+    background-color: #222; /* Dark background for main content */
+    color: #ddd;  /* Lighter text in main content */
+}
+
+.dark-mode .main h3 {
+    color: #fff;  /* White text for headings */
+}
+
+.dark-mode .sidebar {
+    background-color: #555; /* Darker background for sidebar */
+    color: #ddd;  /* Lighter text for sidebar */
+}
+
+.dark-mode .sidebar p {
+    color: #bbb;  /* Lighter text for sidebar */
+}
+
+.dark-mode .footer {
+    background-color: #444; /* Dark footer */
+    color: #ddd;  /* Lighter text for footer */
+}
+
+.dark-mode .footer button {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-mode .footer button:hover {
+    background-color: #555;
+}
+
+/* Ensure the whole page scrolls with the same background color */
+html {
+    background-color: #f4f4f4; /* Light mode background for the page */
+}
+
+body {
+    background-color: #f4f4f4; /* Default background for light mode */
+}
+
+/* Easter Egg Mode */
+.easteregg {
+    background-color: transparent; /* Ensure no background color is applied to the body or html */
+    font-family: "Comic Sans MS", cursive; /* Easter egg font */
+}
+
+/* Ensure html and body background is transparent in easter egg mode */
+.easteregg html, .easteregg body {
+    background-color: transparent !important; /* Override any existing background */
+    background-image: url("assets/veryimportantasset.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fix the image in place when scrolling */
+    color: #ff0000; /* Change text color for fun */
+}
+
+/* Header, Footer, Main, and Sidebar all need to have transparent backgrounds to see the image */
+.easteregg .header,
+.easteregg .footer,
+.easteregg .main,
+.easteregg .sidebar {
+    background-color: transparent !important; /* Remove backgrounds */
+    color: #ff0000; /* Red text for Easter Egg mode */
+}
+
+/* Ensure text color is red throughout */
+.easteregg .header h1,
+.easteregg .header h2,
+.easteregg .main h3,
+.easteregg .footer {
+    color: #ff0000; /* Red text */
+}
+
+/* Modify links and other content to ensure readability */
+.easteregg .main p,
+.easteregg .sidebar p {
+    color: #ff0000; /* Red text */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+
+    .header, .main, .sidebar, .footer {
+        padding: 15px;
+    }
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+
+    .header, .main, .sidebar, .footer {
+        padding: 15px;
+    }
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+
+    .header, .main, .sidebar, .footer {
+        padding: 15px;
+    }
+}
+
 		</style>
 		<script>
 			function backgroundshift() {
@@ -115,16 +279,12 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="Title">
+			<div class="header">
 				<h1>Elliot's Section</h1>
 				<h2>Things about me</h2>
 				<p>Because I can't think of anything else to add</p>
 			</div>
-			<div class="Footer">
-				<p></p>
-				<button id="LightToggle"class="button1" onclick="backgroundshift()">Color</button> <button class="button1" onclick="easteregg()">Don't Click</button>
-			</div>
-			<div class="MainPane">
+			<div class="main">
 				<p>What is there about me to talk about?</p>
 				<br>
 				<h3>Computers</h3>
@@ -137,8 +297,13 @@
 				<p>My taste in music is very broad, ranging from folk and ambient music to electronic and j-pop to even metal</p>
 
 			</div>
-			<div class="Sidebar">
+			<div class="sidebar">
 				<p>Below is a list of things I think you should see:</p>
+			</div>
+
+			<div class="footer">
+				<p></p>
+				<button id="LightToggle"class="button1" onclick="backgroundshift()">Color</button> <button class="button1" onclick="easteregg()">Don't Click</button>
 			</div>
 		</div>
 	</body>
