@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Books</title>
+ <style>
+	
+body {
+    
+    font-family: georgia;
+    background: linear-gradient(to bottom, #D2BFAC, #c9b19d);
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-shadow: inset 0 0 20px rgba(255, 223, 186, 0.3);
+	
+}
+
+header {
+    background-color:#594C3F;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    flex-wrap: wrap; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 19px;
+    transition: color 0.3s;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 1); 
+    border-bottom: 2px solid #f0c674; 	
+}
+
+nav a:hover {
+    color: #f1e0b7;
+}
+
+
+
+
+.intro {
+    text-align: left;
+    margin: 20px;
+    font-size: 18px;
+    padding: 20px;
+    background-color:#f4f4f4;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+	line-height: 1.8;
+	border: 1px solid #594C3F;
+	
+}
+a {
+    color: #001B38;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #cc7a00;
+}
+
+.book {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    background-color: #f4f4f4; 
+    padding: 15px; 
+    border-radius: 8px; 
+	border: 1px solid #594C3F;
+    
+}
+.book:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out; 
+}
+
+
+button:hover {
+    background-color: #4e3b2d; 
+    transform: scale(1.05); 
+}
+
+.book img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.book h2 {
+    
+    color: #007BFF;
+	font-size: 25px; 
+	margin-top: 20px;
+}
+
+.book p {
+    line-height: 1.6;
+	font-size: 16px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: space-between;
+	
+}
+
+.col-6 {
+    width: 60%;
+    padding: 15px;
+}
+
+.col-3 {
+    padding: 30px;
+    width: 30%;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #594C3F; 
+    color: white;
+    padding: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.genre-options {
+    margin-top: 30px;
+    background-color: #f4f4f4; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+	border: 1px solid #594C3F;
+}
+
+.genre-options h3 {
+    font-size: 22px; 
+    color: #594c3f; 
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.genre-options label {
+    font-size: 18px;
+    margin-right: 15px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.genre-options input {
+    margin-right: 10px;
+    transform: scale(1.2); 
+}
+
+
+.genre-options label:hover {
+    background-color: #d1b29a; 
+    border-radius: 5px;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+.genre-options .emoji {
+            font-size: 30px;
+            margin-left: 5px;
+        }
+
+#extraDetails {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #d1b29a;
+    margin-top: 10px;
+    margin-bottom: 20px;
+	
+}
+
+#additionalInputBox {
+    display: none;
+    margin-top: 10px;
+}
+
+button {
+    background-color:#594C3F;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+	 margin-left: 10px;
+   transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color:#594C3F;
+}
+
+
+
+@media screen and (max-width: 768px) {
+ nav {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 20px; 
+    }
+    .col-6, .col-3 {
+        width: 100%; 
+    }
+
+    .book {
+        flex-direction: column; 
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .book img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>My Favourite Books</h1>
+		
+        <nav>
+            <a href="about.html">Home</a>
+            <a href="#">My favourite Books</a>
+            <a href="#">Member 2 Page</a>
+            <a href="#">Member 3 Page</a>
+            <a href="#">Member 4 Page</a>
+            
+        </nav>
+    </header>
+	
+
+    <!-- Intro Section -->
+    <div class="intro">
+        <p>Welcome to my page! <br>Reading books is my passion because it takes me into new perspectives and
+        allows me to take a break and enjoy my day.
+		I enjoy reading and am passionate about it because It’s a way for 
+        me to escape into different worlds and leave behind the stress of everyday life.
+        I especially enjoy reading fictional stories because they take me on new adventures by allowing me to imagine a brand-new world. <br>  
+        Here are my three favourite books:</p>
+    </div>
+<div class="content">
+    <!-- Book 1 -->
+    <div class="col-6">
+        <div class="book">
+            <img src="assets/Rahma/harrypotterbookcover.jpg" alt="Harry Potter and the Philosopher's Stone book Cover">
+            <div>
+                <h2>Harry Potter and the Philosopher's Stone</h2>
+                <p><span role="img" aria-label="author" style="font-size: 24px; ">👤</span><strong>Author:</strong> J.K Rowling</p>
+                <p><span role="img" aria-label="book" style="font-size: 24px;">📚</span><strong>Genre:</strong> Fantasy and Adventure</p>
+                <p>Harry Potter is a fantasy book written by J.K Rowling. The book is about a young boy named Harry Potter who finds out he's a wizard and then ventures 
+			into the world of magic at a school called Hogwarts School of Witchcraft and Wizardry, where he also makes friends and faces challenges.<br><br>
+			This book is one of my favourite books  because it is a fantasy book with adventure, 
+            and it's nostalgic, reminding me of the times I read it with my friends when I was younger</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐</p>
+                
+                <a href="https://www.bookstation.ie/product/harry-potter-and-the-philosophers-stone/" target="_blank">Buy or Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="col-6">
+        <div class="book">
+            <img src="assets/Rahma/themazerunnerbookcover.jpg" alt="The Maze Runner book cover">
+            <div>
+                <h2>The Maze Runner</h2>
+                <p><span role="img" aria-label="author" style="font-size: 24px; ">👤</span><strong>Author:</strong> James Dashner</p>
+                <p><span role="img" aria-label="book" style="font-size: 24px;">📚</span><strong>Genre:</strong> Dystopian, Science Fiction, and Mystery</p>
+                <p>The Maze Runner is a dystopian science fiction book written by James Dashner. The book follows a young boy named Thomas who finds himself in a mysterious 
+					 ever-changing maze with no memory.He and a group of boys who call themselves Gladers are trapped inside a walled area with no clear way out.
+					 The Gladers have created their own society, and their main goal is to escape from the maze. Each day some of them venture into the maze to find an exit,
+                     however they must avoid the creatures in the maze called grievers. Thomas soon learns that his arrival might be the key to escaping, 
+                     Thomas and the Gladers work together to survive and escape the maze.<br><br>
+                      This book is one of my favourite books as the book has engaging mystery which makes me want to keep on reading the book and find more about the maze.</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+                
+                <a href="https://www.easons.com/the-maze-runner-james-dashner-9781909489400?srsltid=AfmBOoqxf6_9fTQbcv02KS07dvwjk-l8Ualr4a1FWqXZW5mnJ9jh7w5H" target="_blank">
+				Buy or Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="col-6">
+        <div class="book">
+            <img src="assets/Rahma/lordoftheringsbookcover.jpg" alt="Lord Of The Rings: Fellowship of the Rings Book Cover">
+            <div>
+                <h2>Lord Of The Rings: Fellowship of the Rings</h2>
+                <p><span role="img" aria-label="author" style="font-size: 24px; ">👤</span><strong>Author:</strong> J.R.R. Tolkien</p>
+                <p><span role="img" aria-label="book" style="font-size: 24px;">📚</span><strong>Genre:</strong> Fantasy and adventure</p>
+                <p>The Fellowship of the Rings is one of the 3 volumes in the Lord of the rings book by J.R.R. Tolkien.
+				It's set in a fictional fantasy world Middle-Earth, it follows the journey of a young hobbit named Frodo Baggins who inherits a powerful ring from his uncle. 
+				This ring, known as the One Ring, was created by the dark lord Sauron to control all other rings of power and rule over middle-earth. Frodo sets out on a quest to 
+				destroy the ring by casting it into the fires of Mount Doom where it was forged. along the way he is joined by a diverse group of companions.
+				Together they face many challenges and dangers.<br><br>The book is one of my favourite books because of it's epic adventure and its engaging plot, 
+				this book is also a classic that many people love. </p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+                
+                <a href="https://www.easons.com/the-fellowship-of-the-ring-j-r-r-tolkien-9780008537722" target="_blank">Buy or Learn More</a>
+            </div>
+        </div>
+    </div>
+<!-- Genre Selection Section -->
+<div class="col-3">
+    <div class="genre-options">
+        <h3>What's Your Favorite Book Genre?</h3>
+
+        <!-- Genre Options (Checkboxes with Emojis) -->
+        <form  method="post" onreset="showInputBox()">
+		<fieldset>
+        <legend>Choose your favorite genres:</legend>
+            <label>
+                <input type="checkbox" name="genre" value="Action" onchange="showInputBox()"> Action 
+                <span class="emoji" aria-label="Action">⚔️ </span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Fantasy" onchange="showInputBox()"> Fantasy 
+                <span class="emoji" aria-label="Fantasy">🦄</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Mystery" onchange="showInputBox()"> Mystery 
+                <span class="emoji" aria-label="Mystery">🕵️‍♂️</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Romance" onchange="showInputBox()"> Romance 
+                <span class="emoji" aria-label="Romance">❤️</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Science Fiction" onchange="showInputBox()"> Science Fiction 
+                <span class="emoji" aria-label="science fiction">🚀</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Adventure" onchange="showInputBox()"> Adventure 
+                <span class="emoji" aria-label="Adventure">🌍</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Comedy" onchange="showInputBox()"> Comedy 
+                <span class="emoji" aria-label="Comedy">😂</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Drama" onchange="showInputBox()"> Drama 
+                <span class="emoji" aria-label="Drama">🎭</span>
+            </label><br>
+            <label>
+                <input type="checkbox" name="genre" value="Horror" onchange="showInputBox()"> Horror 
+                <span class="emoji" aria-label="Horror">👻</span>
+            </label><br>
+
+            <!-- Input Box to Give More Details -->
+            <div id="additionalInputBox">
+                <label for="extraDetails">Why do you like these genres?</label><br>
+                <textarea id="extraDetails" name="extraDetails" rows="6" placeholder="Tell us more about why you like these genres..."></textarea><br>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+			</fieldset>
+        </form>
+    </div>
+</div>
+
+</div>
+<!-- Footer Section -->
+    <footer>
+        <p>© 2024 Rahma Mohamed. All rights reserved.<br>
+    Book covers and content belong to their respective authors and publishers.<br>
+    <strong>Disclaimer:</strong> The content on this page is for educational purposes only and reflects my personal views and work as part of an academic assignment.<br>
+    <strong>Contact:</strong> c24421614@mytudublin.ie</p>
+    </footer>
+	
+	<script>
+	function showInputBox() {
+            var selectedGenres = document.querySelectorAll('input[name="genre"]:checked');
+            var inputBox = document.getElementById("additionalInputBox");
+
+            
+            if (selectedGenres.length > 0) {
+                inputBox.style.display = "block";
+            } else {
+                inputBox.style.display = "none";
+            }
+        }
+		
+	   </script>
+</body>
+</html>

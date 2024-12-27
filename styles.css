@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    flex-wrap: wrap;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    flex: 1;
+}
+
+.navbar nav {
+    flex: 2;
+    text-align: right;
+}
+
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem 10%;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 2;
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.experience-container div {
+    flex: 1;
+    margin: 0 1rem;
+    max-width: 300px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.skills-container div {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.3rem;
+}
+
+.skills-container img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer h2 {
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+button#theme-toggle {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f0a500;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button#theme-toggle:hover {
+    background-color: #333;
+    color: #f0a500;
+}
+
+
+.dark-theme {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-theme header {
+    background: #4a4a4a;
+}
+
+.dark-theme footer {
+    background: #4a4a4a;
+    color: #ffffff;
+}
+
+.dark-theme .navbar nav a {
+    color: #ffffff;
+}
+
+.dark-theme .navbar nav a:hover {
+    color: #f0a500;
+}
+
+.dark-theme h2 {
+    color: #ffffff;
+}
+
+.dark-theme .experience-container div h3,
+.dark-theme .skills-container div p,
+.dark-theme footer p {
+    color: #ffffff;
+}
+
+.dark-theme button#theme-toggle {
+    background-color: #4a4a4a;
+    color: #f0a500;
+}
+
+.dark-theme button#theme-toggle:hover {
+    background-color: #f0a500;
+    color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav {
+        flex: 1;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .navbar nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .profile-picture {
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-picture {
+        width: 240px;
+        height: 240px;
+    }
+
+    .about-text {
+        font-size: 0.9rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
