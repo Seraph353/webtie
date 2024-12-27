@@ -5,7 +5,32 @@
 		<meta http-equiv="refresh" content="10">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
-        <meta http-equiv="refresh" content="0; url=elliotrandompage.html" />
 
 	</head>
+	<style>
+		.container {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.8fr 1.2fr 1.5fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Header"
+    "Main"
+    "Main"
+    "Footer";
+}
 
+.Main { grid-area: Main; }
+
+.Header { grid-area: Header; }
+
+.Footer { grid-area: Footer; }
+
+	</style>
+	<body>
+	<div class="container">
+		<div class="Main"></div>
+		<div class="Header"></div>
+		<div class="Footer"></div>
+	  </div>
+	</body>
