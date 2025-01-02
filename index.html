@@ -26,21 +26,99 @@
 
 .Footer { grid-area: Footer; }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.Header {
+  text-align: center;
+}
+
+.Header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #4a4a4a;
+}
+
+.Header h2 {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #6c757d;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.Main a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  width: 100%; 
+  max-width: 200px; 
+  text-align: center; 
+  box-sizing: border-box; 
+}
+
+.Main a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.Footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  border-top: 1px solid #eaeaea;
+  padding-top: 10px;
+}
+
+
+
 	</style>
 	<body>
 	<div class="container">
 		<div class="Header">
 			<h1>Web Project Home Page</h1>
-			<h2>Elliot, Ethan, Rahma, Tim</h2>
+			<h2>Project created by Elliot, Ethan, Rahma, and Tim</h2>
 		</div>
 		<div class="Main">
-			<a href="elliotRandomPage.html" target="_blank">Elliot's Page</a><br>
-			<a href="ethan.html" target="_blank">Ethan's Page</a><br>
-			<a href="RahmaM.html" target="_blank">Rahma's Page</a><br>
-			<a href="Timpage.html" target="_blank">Tim's Page</a><br>
+			<a href="elliotRandomPage.html" target="_blank" >Elliot's Page</a>
+			<a href="ethan.html" target="_blank" >Ethan's Page</a>
+			<a href="RahmaM.html" target="_blank" >Rahma's Page</a>
+			<a href="Timpage.html" target="_blank" >Tim's Page</a>
 		</div>
 		<div class="Footer">
-			<p>Not really sure why I put a footer on this page, but here we are.</p>
+			<p></p>
 		</div>
 	  </div>
 	</body>
