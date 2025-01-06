@@ -1,12 +1,14 @@
+<!DOCTYPE html>
+
 <html lang="en-us"> 
 	<head>
 		<link rel="stylesheet" href="assets/styles.css">
-		<title>Your title goes here</title>
+		<title>Web Dev Project</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
 		<link rel="icon" type="image/x-icon" href="assets/index/garpfield.ico">
 
-	</head>
+
 	<style>
 		.container {  display: grid;
   grid-template-columns: 1fr;
@@ -26,8 +28,190 @@
 
 .Footer { grid-area: Footer; }
 
+
+ 
+.contact-form {
+    position: relative;
+    bottom: 10px;
+    left: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border: 1px solid  #004C9E;
+    box-sizing: border-box; 
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    color: #004C9E;
+    text-align: center;
+}
+
+.contact-form input[type=text], 
+.contact-form input[type=email], 
+.contact-form input[type=tel], 
+.contact-form textarea {
+    width: 100%; 
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form input[type=submit], 
+.contact-form input[type=reset] {
+    width: 48%; 
+    background-color: #004C9E;
+    color: white;
+    padding: 12px;
+    margin: 8px 1%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    box-sizing: border-box; 
+}
+
+.contact-form input[type=submit]:hover, 
+.contact-form input[type=reset]:hover {
+    background-color: #45a049;
+}
+
+.contact-form input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.contact-form label {
+    font-size: 15px;
+    color: black;
+}
+
+.contact-form fieldset {
+    border: 2px solid #004C9E;
+    padding: 15px;
+    box-sizing: border-box; 
+}
+
+.contact-form legend {
+    font-weight: bold;
+    color: #004C9E;
+}
+
+
+
+
+.contact-table {
+    width: 90%;
+	max-width: 610px;
+    margin: 20px 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid  #004C9E;
+}
+
+.contact-table h2 {
+    text-align: center;
+    color: #004C9E;
+}
+
+.contact-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+	table-layout: fixed;
+     
+}
+
+.contact-table th, .contact-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+	word-wrap: break-word;
+}
+
+.contact-table th {
+    background-color: #004C9E;
+    color: white;
+}
+
+.contact-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+.features-table {
+    width: 90%;
+	max-width: 600px;
+   margin: 20px 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid  #004C9E;
+}
+
+.features-table {
+    text-align: center;
+    color: #004C9E;
+}
+.features-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+	table-layout: fixed;
+     
+}
+
+.features-table th, .features-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+	word-wrap: break-word;
+}
+
+.features-table th {
+    background-color: #004C9E;
+    color: white;
+}
+
+.features-table tr:hover {
+    background-color: #f1f1f1;
+}
+.completed {
+    color: green;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-form input[type=submit],
+    .contact-form input[type=reset] {
+        width: 100%; 
+   
+}
+.contact-table,.features-table, .contact-form {
+        width: 90%; }
+    
+	}
+
 body {
-  margin: 0;
+  margin: 30px;
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
@@ -105,6 +289,7 @@ body {
 
 
 	</style>
+  </head>
 	<body>
 	<div class="container">
 		<div class="Header">
@@ -120,5 +305,171 @@ body {
 		<div class="Footer">
 			<p></p>
 		</div>
-	  </div>
-	</body>
+	  
+	
+    <div class="features-table">
+
+    <h2>Website Features & Status</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Contact Form</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Responsive Design</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Background Color</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Navigation Bar</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Header</td>
+            <td class="completed">Completed</td>
+        </tr>
+        <tr>
+            <td>Footer</td>
+            <td class="completed">Completed</td>
+        </tr>
+    </table>
+</div> <br><br>
+
+<!-- Contact Form -->
+		<div class="contact-form">
+        <h2>Contact Form</h2>
+        <form name="myForm" onsubmit="return validateForm()" method="post">
+		<fieldset>
+		<legend>Contact Us</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <p>How would you like us to contact you?</p>
+            <input type="radio" id="phone_contact" name="Contact_method">
+            <label for="phone_contact">Phone Number</label>
+
+            <input type="radio" id="email_contact" name="Contact_method">
+            <label for="email_contact">Email Address</label>
+
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+			</fieldset>
+        </form>
+    </div>
+	
+	
+<div class="contact-table">
+    <h2>Contact Information</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td>Elliot</td>
+            <td><a href="mailto:c24456832@mytudublin.ie">c24456832@mytudublin.ie</a></td>
+            <td>+353 87 233 4588</td>
+        </tr>
+        <tr>
+            <td>Ethan</td>          
+            <td><a href="mailto:c24308836@mytudublin.ie">c24308836@mytudublin.ie</a></td>
+            <td>+353 87 716 1494</td>
+        </tr>
+        <tr>
+            <td>Rahma</td>
+            <td><a href="mailto:c24421614@mytudublin.ie">c24421614@mytudublin.ie</a></td>
+            <td>+353 89 200 8030</td>
+        </tr>
+        <tr>
+            <td>Tim</td>
+            <td><a href="mailto:c24413774@mytudublin.ie">c24413774@mytudublin.ie</a></td>
+            <td>+353 89 272 8425</td>
+        </tr>
+    </table>
+</div>
+
+
+</div>
+
+<div class="Footer"></div>
+
+  
+  
+<script>
+function validateForm() {
+    var fname = document.getElementById("fname").value.trim();
+    var lname = document.getElementById("lname").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var message = document.getElementById("message").value.trim();
+    var contactMethodPhone = document.getElementById("phone_contact").checked;
+    var contactMethodEmail = document.getElementById("email_contact").checked;
+
+   
+    if (fname === "") {
+        alert("First name must be filled out.");
+        return false;
+    }
+
+    if (lname === "") {
+        alert("Last name must be filled out.");
+        return false;
+    }
+
+    if (email === "") {
+        alert("Email must be filled out.");
+        return false;
+    } 
+  
+    else if (email.indexOf('@') === -1) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+   
+    if (phone === "") {
+        alert("Phone number must be filled out.");
+        return false;
+    }
+
+ 
+    if (message === "") {
+        alert("Message must be filled out.");
+        return false;
+    }
+
+
+    if (!contactMethodPhone && !contactMethodEmail) {
+        alert("Please select a preferred contact method.");
+        return false;
+    }
+
+   
+    alert("Form submitted successfully!");
+    return true;
+}
+ </script>
+  </body>
+</html>
